@@ -13,6 +13,7 @@
 		A99B91202157EE530063B3EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99B911F2157EE530063B3EA /* Assets.xcassets */; };
 		A99B91232157EE530063B3EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99B91212157EE530063B3EA /* LaunchScreen.storyboard */; };
 		A99B91302157EF4B0063B3EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A99B91322157EF4B0063B3EA /* Localizable.strings */; };
+		A9DEDED121581103004A2515 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DEDED021581103004A2515 /* Localization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A99B91332157EF5E0063B3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A99B91342157F06D0063B3EA /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A99B91352157F06F0063B3EA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A9DEDED021581103004A2515 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,14 +65,39 @@
 			isa = PBXGroup;
 			children = (
 				A99B91182157EE4C0063B3EA /* AppDelegate.swift */,
-				A99B911A2157EE4C0063B3EA /* ViewController.swift */,
-				A99B911C2157EE4C0063B3EA /* Main.storyboard */,
-				A99B91322157EF4B0063B3EA /* Localizable.strings */,
 				A99B911F2157EE530063B3EA /* Assets.xcassets */,
-				A99B91212157EE530063B3EA /* LaunchScreen.storyboard */,
+				A9DEDECF21581103004A2515 /* Generated */,
 				A99B91242157EE530063B3EA /* Info.plist */,
+				A99B91212157EE530063B3EA /* LaunchScreen.storyboard */,
+				A99B911C2157EE4C0063B3EA /* Main.storyboard */,
+				A9DEDECD215810A0004A2515 /* Resources */,
+				A99B911A2157EE4C0063B3EA /* ViewController.swift */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		A9DEDECD215810A0004A2515 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A9DEDECE215810AB004A2515 /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A9DEDECE215810AB004A2515 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				A99B91322157EF4B0063B3EA /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		A9DEDECF21581103004A2515 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				A9DEDED021581103004A2515 /* Localization.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +107,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A99B91272157EE530063B3EA /* Build configuration list for PBXNativeTarget "Localization" */;
 			buildPhases = (
+				A9DEDECC2158100D004A2515 /* Generate L10n */,
 				A99B91112157EE4C0063B3EA /* Sources */,
 				A99B91122157EE4C0063B3EA /* Frameworks */,
 				A99B91132157EE4C0063B3EA /* Resources */,
@@ -142,6 +170,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A9DEDECC2158100D004A2515 /* Generate L10n */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate L10n";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftgen strings -t structured-swift4 /${PROJECT_DIR}/${PROJECT_NAME}/Resources/Strings/Base.lproj/Localizable.strings -o /${PROJECT_DIR}/${PROJECT_NAME}/Generated/Localization.swift";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A99B91112157EE4C0063B3EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -149,6 +194,7 @@
 			files = (
 				A99B911B2157EE4C0063B3EA /* ViewController.swift in Sources */,
 				A99B91192157EE4C0063B3EA /* AppDelegate.swift in Sources */,
+				A9DEDED121581103004A2515 /* Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

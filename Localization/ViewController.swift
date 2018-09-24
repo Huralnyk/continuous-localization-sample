@@ -10,30 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet private weak var titleLabel: UILabel?
     @IBOutlet private weak var nextButton: UIButton?
-    @IBOutlet private weak var gotItButton: UIButton?
+    
+    var current = 0 {
+        didSet {
+            titleLabel?.text = L10n.Trainings.Label.numberOfCompleted(current, total)
+            if current == total {
+                nextButton?.setTitle(L10n.Tooltips.Button.gotIt, for: .normal)
+            } else {
+                nextButton?.setTitle(L10n.Tooltips.Button.next, for: .normal)
+            }
+        }
+    }
+    
+    var total = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nextButtonTitle = localizedString(Screens.Tooltips.Button.next)
-        let gotItButtonTitle = NSLocalizedString("GOT IT!", comment: "Title of the last tooltip button")
-        nextButton?.setTitle(nextButtonTitle, for: .normal)
-        gotItButton?.setTitle(gotItButtonTitle, for: .normal)
+        current = 1
+    }
+    
+    @IBAction private func onButtonTap() {
+        if current < total { current += 1 }
     }
     
 }
-
-enum Screens {
-    enum Tooltips {
-        enum Button: String {
-            case next = "NEXT"
-            case gotIt = "GOT IT!"
-        }
-    }
-}
-
-func localizedString<K: RawRepresentable>(_ key: K) -> String where K.RawValue == String {
-    return NSLocalizedString(key.rawValue, comment: "")
-}
-
-
