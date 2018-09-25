@@ -11,6 +11,8 @@ internal enum L10n {
   internal enum Tooltips {
 
     internal enum Button {
+      /// CLOSE
+      internal static let close = L10n.tr("Localizable", "tooltips.button.close")
       /// GOT IT!
       internal static let gotIt = L10n.tr("Localizable", "tooltips.button.got_it")
       /// NEXT!
