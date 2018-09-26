@@ -27,7 +27,7 @@ module Fastlane
 
       	# Print a pretty message about action success
       	flag = params[:lang].upcase.tr('A-Z', "\u{1F1E6}-\u{1F1FF}")
-        UI.success "Successfuly imported #{flag}  translation"
+        UI.success "Successfully imported #{flag}  translation"
 
         Actions.lane_context[SharedValues::DOWNLOAD_LANG] = transtalion_res
       end
