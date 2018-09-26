@@ -1,12 +1,12 @@
 
 /*Title of the last tooltip button*/
-"tooltips.button.got_it" = "";
+"tooltips.button.got_it" = "ICH HABS!";
 
 /*Title of the next button on tooltips screen*/
-"tooltips.button.next" = "";
+"tooltips.button.next" = "NÄCHSTER!";
 
 /*$1 - number of training completed, $2 - total number of trainings*/
-"trainings.label.number_of_completed" = "";
+"trainings.label.number_of_completed" = "Training %lu von %lu abgeschlossen";
 
 /*Title of the close button on tooltips screen*/
-"tooltips.button.close" = "";
+"tooltips.button.close" = "SCHLIESSEN";
