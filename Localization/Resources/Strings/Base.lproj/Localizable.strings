@@ -6,7 +6,3 @@
 "tooltips.button.close" = "CLOSE";
 /* $1 - number of training completed, $2 - total number of trainings */
 "trainings.label.number_of_completed" = "Training %lu out of %lu completed";
-/* Dummy one */
-"foo" = "bar";
-
-
